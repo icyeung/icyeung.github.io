@@ -335,7 +335,7 @@ const UI = {
     // sctx.textAlign = "center";
 
     // Draw pink background with red border for "YOU WIN!"
-    const textX = scrn.width / 2;
+    const textX = scrn.width / 8;
     const textY = scrn.height / 2 - 30;
     const padding = 20;
     const textWidth = 280;
@@ -360,6 +360,7 @@ const UI = {
     );
 
     sctx.strokeText("Will you be my Valentine, Tamia <3", textX, textY);
+    sctx.strokeText("Tamia <3", textX, textY+25);
     sctx.fillStyle = "rgba(112, 36, 56, 1)";
     sctx.fillText("Will you be my Valentine, Tamia <3", textX, textY);
     sctx.fillStyle = "rgba(112, 36, 56, 1)";
