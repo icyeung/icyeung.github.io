@@ -245,7 +245,7 @@ const bird = {
         p.scored = true;
         UI.score.curr++;
         SFX.score.play();
-        if (UI.score.curr >= 3) {
+        if (UI.score.curr >= 1) {
           state.curr = state.win;
           return "win";
         }
