@@ -237,12 +237,12 @@ const bird = {
           return true;
         }
       }
-      // Scoring: bird just passed the pipe
-      if (!p.scored && x + w < this.x - r) {
+      // Scoring: bird just passed the pipe (right edge of pipe is left of bird's left edge)
+      if (!p.scored && (x + w) < (this.x - r)) {
         p.scored = true;
         UI.score.curr++;
         SFX.score.play();
-        if (UI.score.curr >= 6) {
+        if (UI.score.curr >= 3) {
           state.curr = state.win;
           return "win";
         }
