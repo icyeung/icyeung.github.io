@@ -179,7 +179,7 @@ const bird = {
         if (this.y + r >= gnd.y) {
           state.curr = state.gameOver;
         } else if (collisionResult === "win") {
-          // stop everything, win state
+          // win state already set in collisioned()
         } else if (collisionResult) {
           state.curr = state.gameOver;
         }
@@ -238,6 +238,9 @@ const bird = {
         }
       }
       // Scoring: bird just passed the pipe (right edge of pipe is left of bird's left edge)
+      if (p.scored === undefined) {
+        p.scored = false;
+      }
       if (!p.scored && (x + w) < (this.x - r)) {
         p.scored = true;
         UI.score.curr++;
