@@ -231,10 +231,10 @@ const bird = {
         UI.score.curr++;
         SFX.score.play();
         pipe.moved = false;
-        if (UI.score.curr >= 6) {
+        if (UI.score.curr >= 1) {
           state.curr = state.win;
         }
-        else if (this.UI.score.curr < 6) {
+        else if (this.UI.score.curr < 1) {
           state.curr = state.gameOver;
         }
       }
