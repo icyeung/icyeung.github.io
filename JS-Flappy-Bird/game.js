@@ -326,11 +326,11 @@ const UI = {
     }
   },
   drawWinBanner: function () {
-    // Draw pink background with red border"
+    // Draw pink background with red border
     const textX = scrn.width / 2;
     const textY = scrn.height / 2;
     const padding = 20;
-    const textWidth = 320;
+    const textWidth = scrn.width - 40;
     const textHeight = 140;
 
     // Draw red border
