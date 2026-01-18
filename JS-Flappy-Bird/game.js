@@ -363,7 +363,7 @@ const UI = {
     sctx.fillStyle = "rgba(112, 36, 56, 1)";
     sctx.fillText("Will you be my Valentine, Tamia <3", textX, textY);
     sctx.fillStyle = "rgba(112, 36, 56, 1)";
-    sctx.font = "bold 32px Squada One";
+    sctx.font = "bold 20px Squada One";
     sctx.strokeStyle = "#000000";
     sctx.lineWidth = "1";
     // sctx.fillText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
