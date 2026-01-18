@@ -68,7 +68,7 @@ const state = {
   getReady: 0,
   Play: 1,
   gameOver: 2,
-  win: 1,
+  win: 3,
 };
 const SFX = {
   start: new Audio(),
@@ -316,8 +316,25 @@ const UI = {
     sctx.lineWidth = "4";
     sctx.font = "bold 48px Squada One";
     sctx.textAlign = "center";
-    sctx.strokeText("YOU WIN!", scrn.width / 2, scrn.height / 2 - 30);
-    sctx.fillText("YOU WIN!", scrn.width / 2, scrn.height / 2 - 30);
+    
+    // Draw pink background with red border for "YOU WIN!"
+    const textX = scrn.width / 2;
+    const textY = scrn.height / 2 - 30;
+    const padding = 20;
+    const textWidth = 280;
+    const textHeight = 60;
+    
+    // Draw red border
+    sctx.fillStyle = "#FF0000";
+    sctx.fillRect(textX - textWidth / 2 - padding, textY - textHeight / 2 - padding, textWidth + padding * 2, textHeight + padding * 2);
+    
+    // Draw pink background
+    sctx.fillStyle = "#FFC0CB";
+    sctx.fillRect(textX - textWidth / 2 - padding + 4, textY - textHeight / 2 - padding + 4, textWidth + padding * 2 - 8, textHeight + padding * 2 - 8);
+    
+    sctx.strokeText("YOU WIN!", textX, textY);
+    sctx.fillStyle = "#FFD700";
+    sctx.fillText("YOU WIN!", textX, textY);
     sctx.fillStyle = "#FFFFFF";
     sctx.font = "bold 32px Squada One";
     sctx.strokeStyle = "#000000";
