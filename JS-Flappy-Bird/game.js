@@ -326,7 +326,7 @@ const UI = {
     }
   },
   drawWinBanner: function () {
-    // Draw pink background with red border for "YOU WIN!"
+    // Draw pink background with red border"
     const textX = scrn.width / 2;
     const textY = scrn.height / 2;
     const padding = 20;
@@ -363,12 +363,6 @@ const UI = {
     sctx.fillText("Tamia <3", textX, textY + 25);
     sctx.fillStyle = "#4e1a28ff";
     sctx.textAlign = "center";
-    // sctx.fillText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
-    // sctx.strokeText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
-    // sctx.fillStyle = "#FFFFFF";
-    // sctx.font = "20px Squada One";
-    // sctx.fillText("Click or Press Space to Play Again", scrn.width / 2, scrn.height / 2 + 70);
-    // sctx.textAlign = "left";
   },
   update: function () {
     if (state.curr == state.Play) return;
