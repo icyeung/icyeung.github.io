@@ -234,6 +234,9 @@ const bird = {
         if (UI.score.curr >= 6) {
           state.curr = state.win;
         }
+        else if (this.UI.score.curr < 6) {
+          state.curr = state.gameOver;
+        }
       }
     }
   },
