@@ -68,7 +68,7 @@ const state = {
   getReady: 0,
   Play: 1,
   gameOver: 2,
-  win: 1,
+  win: 3,
 };
 const SFX = {
   start: new Audio(),
@@ -229,7 +229,7 @@ const bird = {
         UI.score.curr++;
         SFX.score.play();
         pipe.moved = false;
-        if (UI.score.curr >= 3) {
+        if (UI.score.curr >= 6) {
           state.curr = state.win;
         }
       }
