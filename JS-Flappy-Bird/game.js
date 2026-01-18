@@ -334,7 +334,7 @@ const UI = {
     const textHeight = 140;
 
     // Draw red border
-    sctx.fillStyle = "#FF0000";
+    sctx.fillStyle = "#910000ff";
     sctx.fillRect(
       textX - textWidth / 2 - padding,
       textY - textHeight / 2 - padding,
@@ -343,7 +343,7 @@ const UI = {
     );
 
     // Draw pink background
-    sctx.fillStyle = "#FFC0CB";
+    sctx.fillStyle = "#fd8599ff";
     sctx.fillRect(
       textX - textWidth / 2 - padding + 4,
       textY - textHeight / 2 - padding + 4,
