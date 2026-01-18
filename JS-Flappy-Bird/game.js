@@ -356,12 +356,12 @@ const UI = {
     sctx.strokeStyle = "#000000ff";
     sctx.lineWidth = "8";
     sctx.strokeText("Will you be my Valentine", textX, textY - 15);
-    sctx.fillStyle = "#4e1a28ff";
-    sctx.fillText("Will you be my Valentine", textX, textY - 15);
+    // sctx.fillStyle = "#4e1a28ff";
+    // sctx.fillText("Will you be my Valentine", textX, textY - 15);
     sctx.font = "28px Squada One";
     sctx.strokeText("Tamia <3", textX, textY + 25);
-    sctx.fillText("Tamia <3", textX, textY + 25);
-    sctx.fillStyle = "#4e1a28ff";
+    // sctx.fillText("Tamia <3", textX, textY + 25);
+    // sctx.fillStyle = "#4e1a28ff";
     sctx.textAlign = "center";
   },
   update: function () {
