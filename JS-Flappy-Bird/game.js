@@ -359,7 +359,7 @@ const UI = {
       textHeight + padding * 2 - 8
     );
 
-    sctx.strokeText("Will you be my Valentine, Tamia <3", textX, textY);
+    sctx.strokeText("Will you be my Valentine", textX, textY);
     sctx.strokeText("Tamia <3", textX, textY+25);
     sctx.fillStyle = "rgba(112, 36, 56, 1)";
     sctx.fillText("Will you be my Valentine, Tamia <3", textX, textY);
