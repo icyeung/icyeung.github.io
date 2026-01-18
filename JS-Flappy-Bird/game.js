@@ -352,7 +352,7 @@ const UI = {
     );
 
     sctx.textAlign = "center";
-    sctx.font = "bold 32px Squada One";
+    sctx.font = "bold 28px Squada One";
     sctx.strokeStyle = "#4e1a28ff";
     sctx.lineWidth = "2";
     sctx.strokeText("Will you be my Valentine", textX, textY - 15);
