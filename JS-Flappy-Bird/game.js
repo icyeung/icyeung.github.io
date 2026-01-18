@@ -126,6 +126,7 @@ const pipe = {
       this.pipes.push({
         x: parseFloat(scrn.width),
         y: -210 * Math.min(Math.random() + 1, 1.8),
+        scored: false, // add scored property
       });
     }
     this.pipes.forEach((pipe) => {
@@ -177,7 +178,7 @@ const bird = {
         let collisionResult = this.collisioned();
         if (this.y + r >= gnd.y) {
           state.curr = state.gameOver;
-        } else if (collisionResult === 'win') {
+        } else if (collisionResult === "win") {
           // stop everything, win state
         } else if (collisionResult) {
           state.curr = state.gameOver;
@@ -221,25 +222,29 @@ const bird = {
   collisioned: function () {
     if (!pipe.pipes.length) return;
     let bird = this.animations[0].sprite;
-    let x = pipe.pipes[0].x;
-    let y = pipe.pipes[0].y;
     let r = bird.height / 4 + bird.width / 4;
-    let roof = y + parseFloat(pipe.top.sprite.height);
-    let floor = roof + pipe.gap;
-    let w = parseFloat(pipe.top.sprite.width);
-    if (this.x + r >= x) {
-      if (this.x + r < x + w) {
+    for (let i = 0; i < pipe.pipes.length; i++) {
+      let p = pipe.pipes[i];
+      let x = p.x;
+      let y = p.y;
+      let roof = y + parseFloat(pipe.top.sprite.height);
+      let floor = roof + pipe.gap;
+      let w = parseFloat(pipe.top.sprite.width);
+      // Collision detection
+      if (this.x + r >= x && this.x - r <= x + w) {
         if (this.y - r <= roof || this.y + r >= floor) {
           SFX.hit.play();
           return true;
         }
-      } else if (pipe.moved) {
+      }
+      // Scoring: bird just passed the pipe
+      if (!p.scored && x + w < this.x - r) {
+        p.scored = true;
         UI.score.curr++;
         SFX.score.play();
-        pipe.moved = false;
         if (UI.score.curr >= 6) {
           state.curr = state.win;
-          return 'win'; // signal win
+          return "win";
         }
       }
     }
@@ -325,22 +330,32 @@ const UI = {
     sctx.lineWidth = "4";
     sctx.font = "bold 48px Squada One";
     sctx.textAlign = "center";
-    
+
     // Draw pink background with red border for "YOU WIN!"
     const textX = scrn.width / 2;
     const textY = scrn.height / 2 - 30;
     const padding = 20;
     const textWidth = 280;
     const textHeight = 60;
-    
+
     // Draw red border
     sctx.fillStyle = "#FF0000";
-    sctx.fillRect(textX - textWidth / 2 - padding, textY - textHeight / 2 - padding, textWidth + padding * 2, textHeight + padding * 2);
-    
+    sctx.fillRect(
+      textX - textWidth / 2 - padding,
+      textY - textHeight / 2 - padding,
+      textWidth + padding * 2,
+      textHeight + padding * 2
+    );
+
     // Draw pink background
     sctx.fillStyle = "#FFC0CB";
-    sctx.fillRect(textX - textWidth / 2 - padding + 4, textY - textHeight / 2 - padding + 4, textWidth + padding * 2 - 8, textHeight + padding * 2 - 8);
-    
+    sctx.fillRect(
+      textX - textWidth / 2 - padding + 4,
+      textY - textHeight / 2 - padding + 4,
+      textWidth + padding * 2 - 8,
+      textHeight + padding * 2 - 8
+    );
+
     sctx.strokeText("YOU!", textX, textY);
     sctx.fillStyle = "#e16ea4ff";
     sctx.fillText("YOU!", textX, textY);
