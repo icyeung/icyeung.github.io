@@ -353,15 +353,16 @@ const UI = {
 
     sctx.textAlign = "center";
     sctx.font = "bold 32px Squada One";
-    sctx.strokeStyle = "#702438";
+    sctx.strokeStyle = "#4e1a28ff";
     sctx.lineWidth = "2";
     sctx.strokeText("Will you be my Valentine", textX, textY - 15);
-    sctx.fillStyle = "rgba(112, 36, 56, 1)";
+    sctx.fillStyle = "#4e1a28ff";
     sctx.fillText("Will you be my Valentine", textX, textY - 15);
     sctx.font = "bold 28px Squada One";
     sctx.strokeText("Tamia <3", textX, textY + 25);
     sctx.fillText("Tamia <3", textX, textY + 25);
-    sctx.textAlign = "left";
+    sctx.fillStyle = "#4e1a28ff";
+    sctx.textAlign = "center";
     // sctx.fillText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
     // sctx.strokeText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
     // sctx.fillStyle = "#FFFFFF";
