@@ -361,7 +361,7 @@ const UI = {
     sctx.font = "28px Squada One";
     sctx.strokeText("Tamia <3", textX, textY + 25);
     // sctx.fillText("Tamia <3", textX, textY + 25);
-    // sctx.fillStyle = "#4e1a28ff";
+    sctx.fillStyle = "#4e1a28ff";
     sctx.textAlign = "center";
   },
   update: function () {
