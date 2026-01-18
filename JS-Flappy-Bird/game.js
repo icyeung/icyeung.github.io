@@ -174,10 +174,14 @@ const bird = {
         this.y += this.speed;
         this.setRotation();
         this.speed += this.gravity;
-        if (this.y + r >= gnd.y || this.collisioned()) {
+        let collisionResult = this.collisioned();
+        if (this.y + r >= gnd.y) {
+          state.curr = state.gameOver;
+        } else if (collisionResult === 'win') {
+          // stop everything, win state
+        } else if (collisionResult) {
           state.curr = state.gameOver;
         }
-
         break;
       case state.gameOver:
         this.frame = 1;
@@ -194,7 +198,9 @@ const bird = {
             SFX.played = true;
           }
         }
-
+        break;
+      case state.win:
+        // freeze bird on win
         break;
     }
     this.frame = this.frame % this.animations.length;
@@ -231,11 +237,9 @@ const bird = {
         UI.score.curr++;
         SFX.score.play();
         pipe.moved = false;
-        if (UI.score.curr >= 1) {
+        if (UI.score.curr >= 6) {
           state.curr = state.win;
-        }
-        else if (this.UI.score.curr < 1) {
-          state.curr = state.gameOver;
+          return 'win'; // signal win
         }
       }
     }
