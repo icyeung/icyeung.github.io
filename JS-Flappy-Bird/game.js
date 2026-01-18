@@ -337,19 +337,19 @@ const UI = {
     sctx.fillStyle = "#FFC0CB";
     sctx.fillRect(textX - textWidth / 2 - padding + 4, textY - textHeight / 2 - padding + 4, textWidth + padding * 2 - 8, textHeight + padding * 2 - 8);
     
-    sctx.strokeText("YOU WIN!", textX, textY);
-    sctx.fillStyle = "#FFD700";
-    sctx.fillText("YOU WIN!", textX, textY);
-    sctx.fillStyle = "#FFFFFF";
+    sctx.strokeText("YOU!", textX, textY);
+    sctx.fillStyle = "#e16ea4ff";
+    sctx.fillText("YOU!", textX, textY);
+    sctx.fillStyle = "rgba(202, 82, 148, 1)";
     sctx.font = "bold 32px Squada One";
     sctx.strokeStyle = "#000000";
     sctx.lineWidth = "2";
-    sctx.fillText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
-    sctx.strokeText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
-    sctx.fillStyle = "#FFFFFF";
-    sctx.font = "20px Squada One";
-    sctx.fillText("Click or Press Space to Play Again", scrn.width / 2, scrn.height / 2 + 70);
-    sctx.textAlign = "left";
+    // sctx.fillText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
+    // sctx.strokeText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
+    // sctx.fillStyle = "#FFFFFF";
+    // sctx.font = "20px Squada One";
+    // sctx.fillText("Click or Press Space to Play Again", scrn.width / 2, scrn.height / 2 + 70);
+    // sctx.textAlign = "left";
   },
   update: function () {
     if (state.curr == state.Play) return;
