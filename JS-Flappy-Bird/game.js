@@ -68,7 +68,7 @@ const state = {
   getReady: 0,
   Play: 1,
   gameOver: 2,
-  win: 3,
+  win: 1,
 };
 const SFX = {
   start: new Audio(),
@@ -105,7 +105,7 @@ const pipe = {
   top: { sprite: new Image() },
   bot: { sprite: new Image() },
   gap: 85,
-  moved: true,
+  moved: false,
   pipes: [],
   draw: function () {
     for (let i = 0; i < this.pipes.length; i++) {
@@ -229,7 +229,7 @@ const bird = {
         UI.score.curr++;
         SFX.score.play();
         pipe.moved = false;
-        if (UI.score.curr >= 6) {
+        if (UI.score.curr >= 3) {
           state.curr = state.win;
         }
       }
