@@ -16,6 +16,7 @@ scrn.addEventListener("click", () => {
       bird.speed = 0;
       bird.y = 100;
       pipe.pipes = [];
+      pipe.moved = false;
       UI.score.curr = 0;
       SFX.played = false;
       break;
@@ -24,6 +25,7 @@ scrn.addEventListener("click", () => {
       bird.speed = 0;
       bird.y = 100;
       pipe.pipes = [];
+      pipe.moved = false;
       UI.score.curr = 0;
       SFX.played = false;
       break;
