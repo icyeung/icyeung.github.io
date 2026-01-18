@@ -326,20 +326,12 @@ const UI = {
     }
   },
   drawWinBanner: function () {
-    // sctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-    // sctx.fillRect(0, 0, scrn.width, scrn.height);
-    // sctx.fillStyle = "#FFD700";
-    // sctx.strokeStyle = "#FF6B6B";
-    // sctx.lineWidth = "4";
-    // sctx.font = "bold 48px Squada One";
-    // sctx.textAlign = "center";
-
     // Draw pink background with red border for "YOU WIN!"
-    const textX = scrn.width / 8;
-    const textY = scrn.height / 2 - 30;
+    const textX = scrn.width / 2;
+    const textY = scrn.height / 2;
     const padding = 20;
-    const textWidth = 280;
-    const textHeight = 120;
+    const textWidth = 320;
+    const textHeight = 140;
 
     // Draw red border
     sctx.fillStyle = "#FF0000";
@@ -359,14 +351,17 @@ const UI = {
       textHeight + padding * 2 - 8
     );
 
-    sctx.strokeText("Will you be my Valentine", textX, textY);
-    sctx.strokeText("Tamia <3", textX, textY+25);
+    sctx.textAlign = "center";
+    sctx.font = "bold 32px Squada One";
+    sctx.strokeStyle = "#702438";
+    sctx.lineWidth = "2";
+    sctx.strokeText("Will you be my Valentine", textX, textY - 15);
     sctx.fillStyle = "rgba(112, 36, 56, 1)";
-    sctx.fillText("Will you be my Valentine, Tamia <3", textX, textY);
-    sctx.fillStyle = "rgba(112, 36, 56, 1)";
-    sctx.font = "bold 20px Squada One";
-    sctx.strokeStyle = "#000000";
-    sctx.lineWidth = "1";
+    sctx.fillText("Will you be my Valentine", textX, textY - 15);
+    sctx.font = "bold 28px Squada One";
+    sctx.strokeText("Tamia <3", textX, textY + 25);
+    sctx.fillText("Tamia <3", textX, textY + 25);
+    sctx.textAlign = "left";
     // sctx.fillText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
     // sctx.strokeText(`Final Score: ${this.score.curr}`, scrn.width / 2, scrn.height / 2 + 30);
     // sctx.fillStyle = "#FFFFFF";
